@@ -22,6 +22,7 @@ body {
     cursor: pointer;
 }
 .info-box{
+    display: none;
     width: 540px;
     background: whitesmoke;
     border-radius: 5px;
@@ -29,10 +30,57 @@ body {
 .info-box .info-title{
     height: 60px;
     width: 100%;
-    border-bottom: 1px solid gold;
+    border-bottom: 2px solid gold;
     display: flex;
     align-items: center;
     padding: 0 35px;
     font-size: 25px;
     font-weight: 600;
+}
+.info-box .info-list{
+    padding: 15px 35px;
+}
+.info-box .info-list .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+.info-box .info-list .info span{
+    font-weight: 600;
+    color: green;
+}
+.info-box .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 2px solid gold;
+}
+.info-box .buttons button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 10px solid whitesmoke;
+    background: blue;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-family: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.buttons button.restart{
+    color: whitesmoke;
+    border-color: blue;
+}
+.buttons button.restart:hoover{
+    background: blue;
+}
+
+.buttons button.quit{
+    color: whitesmoke;
+    border-color: blue;
+}
+.buttons button.quit:hoover{
+    color: whitesmoke;
+    background-color: blue;
 }
