@@ -1,86 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 
 body {
-    background: blue;
+    background: #007bff;
 }
-.start-btn,
-.info-box{
+.start_btn,
+.info_box{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.start-btn button{
+.start_btn button{
     font-size: 25px;
     font-weight: 500;
-    color: antiquewhite;
+    color: #007bff;
     padding: 15px 30px;
     outline: none;
     border: none;
     border-radius: 5px;
-    background: red;
+    background: #fff;
     cursor: pointer;
 }
-.info-box{
+.info_box{
     display: none;
     width: 540px;
-    background: whitesmoke;
+    background: #fff;
     border-radius: 5px;
 }
-.info-box .info-title{
+.info_box .info_title{
     height: 60px;
     width: 100%;
-    border-bottom: 2px solid gold;
+    border-bottom: 2px solid lightgrey;
     display: flex;
     align-items: center;
     padding: 0 35px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }
-.info-box .info-list{
+.info_box .info_list{
     padding: 15px 35px;
 }
-.info-box .info-list .info{
+.info_box .info_list .info{
     margin: 5px 0;
     font-size: 17px;
 }
-.info-box .info-list .info span{
+.info_box .info_list .info span{
     font-weight: 600;
-    color: green;
+    color: #007bff;
 }
-.info-box .buttons{
+.info_box .buttons{
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 0 35px;
-    border-top: 2px solid gold;
+    border-top: 2px solid lightgrey;
 }
-.info-box .buttons button{
+.info_box .buttons button{
     margin: 0 5px;
     height: 40px;
     width: 100px;
-    border: 10px solid whitesmoke;
-    background: blue;
+    border: 1px solid #007bff;
     border-radius: 5px;
-    color: whitesmoke;
-    font-family: 16px;
+    color: #fff;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 .buttons button.restart{
-    color: whitesmoke;
-    border-color: blue;
+    color: #fff;
+    background: #007bff;
 }
 .buttons button.restart:hoover{
-    background: blue;
+    background: #0263ca;
 }
 
 .buttons button.quit{
-    color: whitesmoke;
-    border-color: blue;
+    color: #007bff;  
 }
 .buttons button.quit:hoover{
-    color: whitesmoke;
-    background-color: blue;
+    color: #fff;
+    background-color: #007bff;
 }
