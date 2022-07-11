@@ -17,7 +17,8 @@ body {
 }
 
 .info_box.activeInfo,
-.info_box.activeQuiz{
+.quiz_box.activeQuiz,
+.result_box .activeResult{
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -264,6 +265,7 @@ footer .total_que span p{
 }
 
 footer .next_btn{
+    display: none;
     height: 40px;
     padding: 0 13px;
     font-size: 18px;

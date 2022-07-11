@@ -5,7 +5,7 @@ const exit_btn = info_box.querySelector(".buttons .quit");
 const continue_btn = document.querySelector(".buttons .restart")
 const quiz_box = info_box.querySelector(".quiz_box");
 const timeCount = quiz_box.querySelector(".timer .timer_sec")
-const timeline = quiz_box.querySelector(".timer .time_line")
+const timeline = quiz_box.querySelector("header .time_line")
 
 const option_list = document.queryselector(".option_list");
 
@@ -34,8 +34,11 @@ let que_numb = 1;
 let counter;
 let timeValue = 15;
 let widthValue = 0;
-
+let userScore = 0;
 const next_btn = quiz_box.querySelector(".next_btn");
+const result_box = document.querySelector(".result_box");
+const restart_quiz = result_box.querySelector(".buttons .restart")
+const quit_quiz = result_box.querySelector(".buttons .quit")
 
 //if next button clicked
 next_btn.onclick = ()=>{
@@ -44,8 +47,11 @@ next_btn.onclick = ()=>{
          que_numb++;
          showQuestions(que_count);
          queCounter(que_numb);
+         clearInterval(counter);
+         stratTimer(timeValue);
          clearInterval(counterLine);
-         startTimerLine(timeValue);
+         startTimerLine(widthValue);
+         next_btn.style.display = "block";
     }else{
         console.log("questions completed");
     };
@@ -76,6 +82,8 @@ function optionSelected(answer){
     let userAns = answer.textContent;
     let correctAns = questions[que_count].answer;
     let allOptions = option_list.children.length;
+    userScore += 1;
+    console.log(userScore);
     if(userAns == correctAns){
         answer.classList.add("correct");
         console.log("Answer is correct"); 
@@ -99,7 +107,16 @@ function optionSelected(answer){
     for (let i=o; i < allOptions; i++){
         option_list.children[i].classList.add("disabled")
     }
+    next_btn.style.display = "block";
 }
+
+
+function showResultBox();
+info_box.classList.remove("activeInfo");
+quiz_box.classList.remove("activeQuiz");
+result_box.classList.add("activeResult");
+const scoreText = result_box.querySelector("score_text");
+if(userScore > 3){} 
 
 function startTimer(time){
     counter = setInterval(timer, 1000)
@@ -120,8 +137,8 @@ function startTimer(time){
         counterLine = setInterval(timer, 29)
         function timer(){
             time += 1;
-            timeline.getElementsByClassName.width = time + "px";
-            if(time < 549){
+            timeline.style.width = time + "px";
+            if(time > 549){
                 clearInterval(counterLine)
             }
         }
